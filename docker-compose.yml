@@ -24,7 +24,7 @@ services:
       - '--storage.tsdb.retention.time=200h'
       - '--web.enable-lifecycle'
     restart: unless-stopped
-    expose:
+    port:
       - 9090
     networks:
       - monitor-net
@@ -95,7 +95,7 @@ services:
       - GF_SECURITY_ADMIN_PASSWORD=${ADMIN_PASSWORD}
       - GF_USERS_ALLOW_SIGN_UP=false
     restart: unless-stopped
-    expose:
+    port:
       - 3000
     networks:
       - monitor-net
